@@ -1,0 +1,2 @@
+Q:	When using `hostname NewHostName` to change the system name, which file must be edited to make it permanent?
+A:	/etc/hostname. After that you can run `/etc/init.d/hostname.sh start` to update it without rebooting.
