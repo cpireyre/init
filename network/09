@@ -1,0 +1,5 @@
+Q:	Find the external IP(s) of 42.fr
+A:	`dig +short 42.fr @resolver1.opendns.com` gives:
+163.172.250.11
+163.172.250.13
+163.172.250.12
