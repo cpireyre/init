@@ -1,1 +1,2 @@
 service ssh? /etc/init.d/ssh?
+sudo service ssh status?
