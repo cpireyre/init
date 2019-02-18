@@ -1,1 +1,1 @@
-10.13.255.255
+ifconfig en0 | grep broadcast | awk '{print $6}'
