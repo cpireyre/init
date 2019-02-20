@@ -1,0 +1,2 @@
+Q: Find the name of your host.
+A: Running `dig -x `./12` | grep -A1 "ANSWER SECTION"` gives: e2r9p11.42.fr.
