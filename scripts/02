@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$1" ]
+then
+	echo usage: $0 user_to_delete
+else
+echo Attempting to delete user $1.
+deluser $1 || userdel -f $1
+fi
