@@ -1,1 +1,1 @@
-ssh root@jimjames.home
+ssh -p 22 user@host

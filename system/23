@@ -1,0 +1,2 @@
+Q:	Explain how connect yourself as new user. (With graphic session and ssh session)
+A:	Well, you either restart the VM in graphical mode and pick the new user name, or use ssh new_user_name@host 
