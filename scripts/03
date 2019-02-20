@@ -1,0 +1,31 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    03                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 05:36:13 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 05:54:22 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#!/bin/bash
+
+NUM="$RANDOM"
+TRIES=1
+echo "I'm thinking of a number. Can you guess what it is?"
+GUESS=0
+while [ $NUM != $GUESS ]
+do
+read GUESS
+if [ $GUESS -gt $NUM ]
+then
+echo Try a smaller number.
+elif [ $GUESS -lt $NUM ]
+then	
+echo A bit bigger perhaps.
+fi
+TRIES=$[$TRIES+1]
+done
+echo Nice one. Score: $TRIES.
