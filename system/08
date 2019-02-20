@@ -1,2 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    08                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 04:42:55 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 04:43:04 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Q: Which file contains the RSA keys of systems that are authorized to connect via SSH?
 A: man ssh says it's usually ~/.ssh/id_rsa

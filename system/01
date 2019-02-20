@@ -1,2 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    01                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 04:42:55 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 04:43:04 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Q:	In what file can you find the installed version of your Debian?
 A:	/etc/os-release, possibly also /etc/issue.

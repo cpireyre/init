@@ -1,2 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    23                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 04:42:55 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 04:43:04 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Q:	Explain how connect yourself as new user. (With graphic session and ssh session)
 A:	Well, you either restart the VM in graphical mode and pick the new user name, or use ssh new_user_name@host 

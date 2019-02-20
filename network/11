@@ -1,2 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    11                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 04:42:55 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 04:43:04 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Q;	Use the output of the previous command [traceroute] to find the name and IP address of the device that makes the link between you (local network) and the outside world
 A:	nat-1 (10.60.1.11). This device handles network address translation (NAT), i.e. it connects my device to the outside world.

@@ -1,2 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    03                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/20 04:42:55 by cpireyre          #+#    #+#              #
+#    Updated: 2019/02/20 04:43:04 by cpireyre         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 Q:	When using `hostname NewHostName` to change the system name, which file must be edited to make it permanent?
 A:	/etc/hostname. After that you can run `/etc/init.d/hostname.sh start` to update it without rebooting.
