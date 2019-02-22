@@ -1,0 +1,30 @@
+#!/bin/bash
+#TODO
+#	ask user for confirmations but toggle automatic mode with -y
+
+VM_NAME=$1
+OS_TYPE=Debian_64
+VM_PATH=$2
+ISO_PATH=$3
+
+echo This script will create and launch a Debian VM using virtualbox.
+
+if [ -z $3 ]
+then
+	echo usage: $0 vm_name vm_path/ iso_path/
+else
+VBoxManage createvm --name $VM_NAME --ostype $OS_TYPE --register
+VBoxManage createmedium --filename $2/$1.vdi --size 10240
+
+VBoxManage storagectl $1 --name SATA --add SATA --controller IntelAhci
+VBoxManage storageattach $2 --storagectl SATA --port 0 --device 0 --type hdd --medium $2/$1.vdi
+
+VBoxManage modifyvm $1 --ioapic on \
+	--boot1 dvd --boot2 disk --boot3 none --boot4 none \
+	--cpus 2 \
+	--audio none \
+	--usb off --usbehci off --usbhxci off \
+	--nic1 bridged --bridgeadapter1 en0
+
+VBoxManage unattended install $1 --user=meme --password=meme@SSWORD --country=EN --time-zone=GMT --iso=$3 --start-vm=headless
+fi
