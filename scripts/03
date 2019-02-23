@@ -1,31 +1,34 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    03                                                 :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cpireyre <cpireyre@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/02/20 05:36:13 by cpireyre          #+#    #+#              #
-#    Updated: 2019/02/20 05:54:22 by cpireyre         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 #!/bin/bash
+#TODO
+#	ask user for confirmations but toggle automatic mode with -y
 
-NUM="$RANDOM"
-TRIES=1
-echo "I'm thinking of a number. Can you guess what it is?"
-GUESS=0
-while [ $NUM != $GUESS ]
-do
-read GUESS
-if [ $GUESS -gt $NUM ]
+VM_NAME=$1
+OS_TYPE=Debian_64
+VM_PATH=$2
+ISO_PATH=$3
+
+echo This script will create and launch a Debian VM using virtualbox.
+
+if [ -z $3 ]
 then
-echo Try a smaller number.
-elif [ $GUESS -lt $NUM ]
-then	
-echo A bit bigger perhaps.
+	echo usage: $0 vm_name vm_path/ iso_path/
+else
+VBoxManage createvm --name $VM_NAME --ostype $OS_TYPE --register
+VBoxManage createmedium --filename $2/$1.vdi --size 5240
+
+VBoxManage storagectl $1 --name SATA --add SATA --controller IntelAHCI  --portcount 2
+VBoxManage storageattach $1 --storagectl SATA --port 0 --device 0 --type hdd --medium $2/$1.vdi
+
+VBoxManage modifyvm $1 --ioapic on \
+	--boot2 dvd --boot1 disk --boot3 none --boot4 none \
+	--cpus 2 \
+	--audio none \
+	--usb off --usbehci off \
+	--memory 1024 \
+	--vram 256 \
+	--nic1 bridged --bridgeadapter1 en0
+
+VBoxManage unattended install $1 --user=meme --password=meme --country=EN --time-zone=GMT \
+	--language=EN --locale=en_US \
+	--iso=$3  --install-additions 
 fi
-TRIES=$[$TRIES+1]
-done
-echo Nice one. Score: $TRIES.
